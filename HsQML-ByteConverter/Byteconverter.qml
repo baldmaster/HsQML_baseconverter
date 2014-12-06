@@ -39,6 +39,7 @@ Rectangle {
                     maximumLength: 4
                     text: "1"
                     validator: IntValidator{bottom: 0; top: 1023;}
+                    
                     onTextChanged: binary.text = ConvertToBase (this.text, 10, 2), 
                                    hexadecimal.text = ConvertToBase (this.text, 10, 16)
                 }
