@@ -1,3 +1,5 @@
+-- Simple example of binding Haskell and QML
+
 module Main where
 
 import Graphics.QML
@@ -20,13 +22,16 @@ main = do
                     in return . T.pack $
                        (numeralBaseConverter n from to) :: IO Text)]
              
-    -- creating new object and looping application
+    -- creating new object
     ctx <- newObject clazz ()
+    
+    -- getting .qml file, creating new QML engine, 
+    -- and running until the engine has terminated
     runEngineLoop defaultEngineConfig {
         initialDocument = fileDocument "Byteconverter.qml",
         contextObject = Just $ anyObjRef ctx}
       
--- Hexadecimal digits
+-- Hexadecimal digits. Captain Obvious is out there... :)
 hex = ["a", "b", "c", "d", "e", "f"]
 
 -- Numeral base conversion

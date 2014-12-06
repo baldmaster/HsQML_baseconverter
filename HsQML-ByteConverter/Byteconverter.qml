@@ -1,3 +1,6 @@
+// Creating UI with QtQuick is pretty simple
+// especially if you are familiar with CSS and JS
+
 import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
@@ -39,6 +42,7 @@ Rectangle {
                     maximumLength: 4
                     text: "1"
                     validator: IntValidator{bottom: 0; top: 1023;}
+                    
                     onTextChanged: binary.text = ConvertToBase (this.text, 10, 2), 
                                    hexadecimal.text = ConvertToBase (this.text, 10, 16)
                 }
