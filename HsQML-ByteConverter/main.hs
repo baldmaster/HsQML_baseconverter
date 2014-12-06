@@ -24,12 +24,14 @@ main = do
              
     -- creating new object
     ctx <- newObject clazz ()
-    -- getting QML file and setting loop until window is closed
+    
+    -- getting .qml file, creating new QML engine, 
+    -- and running until the engine has terminated
     runEngineLoop defaultEngineConfig {
         initialDocument = fileDocument "Byteconverter.qml",
         contextObject = Just $ anyObjRef ctx}
       
--- Hexadecimal digits
+-- Hexadecimal digits. Captain Obvious is out there... :)
 hex = ["a", "b", "c", "d", "e", "f"]
 
 -- Numeral base conversion
