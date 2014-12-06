@@ -1,3 +1,5 @@
+-- Simple example of binding Haskell and QML
+
 module Main where
 
 import Graphics.QML
