@@ -48,7 +48,7 @@ convertTo base result number
                        
 convertFrom from number result power
     | number == "" = result
-    | otherwise   = convertFrom from num (result + d * power) (power * from)
+    | otherwise    = convertFrom from num (result + d * power) (power * from)
                     where l   = Prelude.last number
                           num = Prelude.init number
                           d   = C.digitToInt $ l
