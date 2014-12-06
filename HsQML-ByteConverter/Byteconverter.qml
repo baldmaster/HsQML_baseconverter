@@ -1,3 +1,6 @@
+// Creating UI with QtQuick is pretty simple
+// especially if you are familiar with CSS and JS
+
 import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
