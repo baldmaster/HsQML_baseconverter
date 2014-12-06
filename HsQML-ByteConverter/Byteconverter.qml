@@ -71,7 +71,6 @@ Rectangle {
                     color: "#BC6F1EFF"
                     font.pointSize: 30
                     focus: true
-                  //  maximumLength: 10
                     text: "1"
                     validator: RegExpValidator {regExp: /[01]{1,10}/}
                     onTextChanged: decimal.text = ConvertToBase (this.text, 2, 10), 
