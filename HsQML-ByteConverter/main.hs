@@ -22,8 +22,9 @@ main = do
                     in return . T.pack $
                        (numeralBaseConverter n from to) :: IO Text)]
              
-    -- creating new object and looping application
+    -- creating new object
     ctx <- newObject clazz ()
+    -- getting QML file and setting loop until window is closed
     runEngineLoop defaultEngineConfig {
         initialDocument = fileDocument "Byteconverter.qml",
         contextObject = Just $ anyObjRef ctx}
