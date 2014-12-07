@@ -1,4 +1,4 @@
 Haskell
-=======
+----
 
 Haskell projects
