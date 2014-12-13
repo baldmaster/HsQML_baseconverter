@@ -1,4 +1,0 @@
-Haskell
-----
-
-Haskell projects
