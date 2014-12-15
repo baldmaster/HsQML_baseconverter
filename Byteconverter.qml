@@ -70,15 +70,15 @@ Rectangle {
                 height: 50
                 color: "#ff00ffff"
                 
-        TextInput {
-                    id: binary
-                    color: "#BC6F1EFF"
-                    font.pointSize: 30
-                    focus: true
-                    text: "1"
-                    validator: RegExpValidator {regExp: /[01]{1,10}/}
-                    onTextChanged: decimal.text = ConvertToBase (this.text, 2, 10), 
-                                   hexadecimal.text = ConvertToBase (this.text, 2, 16)
+            TextInput {
+                id: binary
+                color: "#BC6F1EFF"
+                font.pointSize: 30
+                focus: true
+                text: "1"
+                validator: RegExpValidator {regExp: /[01]{1,10}/}
+                onTextChanged: decimal.text = ConvertToBase (this.text, 2, 10), 
+                                    hexadecimal.text = ConvertToBase (this.text, 2, 16)
                 }
             }           
         }
