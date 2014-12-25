@@ -63,28 +63,16 @@ Window {
                 x: 100
                 y: 15
                 height: 50
-<<<<<<< HEAD
                     
             TextField {
                 width: 280
                 id: binary
-=======
-                color: "#ff00ffff"
-                
-            TextInput {
-                id: binary
-                color: "#BC6F1EFF"
->>>>>>> c118c97011f2bb2e3b8ca2bdea9bc8985440cf44
                 font.pointSize: 30
                 focus: true
                 text: "1"
                 validator: RegExpValidator {regExp: /[01]{1,10}/}
                 onTextChanged: decimal.text = ConvertToBase (this.text, 2, 10), 
-<<<<<<< HEAD
                                hexadecimal.text = ConvertToBase (this.text, 2, 16)
-=======
-                                    hexadecimal.text = ConvertToBase (this.text, 2, 16)
->>>>>>> c118c97011f2bb2e3b8ca2bdea9bc8985440cf44
                 }
             }           
         }
