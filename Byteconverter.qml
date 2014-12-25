@@ -1,24 +1,24 @@
-// Creating UI with QtQuick is pretty simple
-// especially if you are familiar with CSS and JS
-
 import QtQuick 2.3
+import QtQuick.Window 2.2
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
 
-Rectangle {
+Window {
+    visible: true
     color: "lightgray"
-    width: 400
-    height: 400
+    minimumHeight: 350
+    maximumHeight: 350
+    minimumWidth: 400
+    maximumWidth: 400
+    opacity: 0.5
 
     Column {
         spacing: 5
+
         // DECIMAL BLOCK
         Rectangle {
             height: 80
             width: 400
-            
-            radius: 20
-
             Text {
                 text: "Dec"
                 font.pointSize: 30
@@ -32,19 +32,18 @@ Rectangle {
                 y: 15
                 width: 280
                 height: 50
-                color: "#ff00ffff"
                 
-                TextInput {
+                TextField {
                     id: decimal
-                    color: "#BC6F1EFF"
+                    width: 280
                     font.pointSize: 30
                     focus: true
                     maximumLength: 4
                     text: "1"
-                    validator: IntValidator{bottom: 0; top: 1023;}
-                    
+                    validator: IntValidator{bottom: 0; top: 4095;}
                     onTextChanged: binary.text = ConvertToBase (this.text, 10, 2), 
                                    hexadecimal.text = ConvertToBase (this.text, 10, 16)
+                                 
                 }
             }                
         }
@@ -53,9 +52,6 @@ Rectangle {
         Rectangle {
             height: 80
             width: 400
-            
-            radius: 20
-
             Text {
                 text: "Bin"
                 font.pointSize: 30
@@ -66,19 +62,17 @@ Rectangle {
                 id: bin
                 x: 100
                 y: 15
-                width: 280
                 height: 50
-                color: "#ff00ffff"
-                
-        TextInput {
-                    id: binary
-                    color: "#BC6F1EFF"
-                    font.pointSize: 30
-                    focus: true
-                    text: "1"
-                    validator: RegExpValidator {regExp: /[01]{1,10}/}
-                    onTextChanged: decimal.text = ConvertToBase (this.text, 2, 10), 
-                                   hexadecimal.text = ConvertToBase (this.text, 2, 16)
+                    
+            TextField {
+                width: 280
+                id: binary
+                font.pointSize: 30
+                focus: true
+                text: "1"
+                validator: RegExpValidator {regExp: /[01]{1,10}/}
+                onTextChanged: decimal.text = ConvertToBase (this.text, 2, 10), 
+                               hexadecimal.text = ConvertToBase (this.text, 2, 16)
                 }
             }           
         }
@@ -87,8 +81,6 @@ Rectangle {
         Rectangle {
             height: 80
             width: 400
-            
-            radius: 20
 
             Text {
                 text: "Hex"
@@ -103,11 +95,10 @@ Rectangle {
                 y: 15
                 width: 280
                 height: 50
-                color: "#ff00ffff"
-                
-                TextInput {
+ 
+                TextField {
                     id: hexadecimal
-                    color: "#BC6F1EFF"
+                    width: 280
                     font.pointSize: 30
                     focus: true
                     text: "1"
