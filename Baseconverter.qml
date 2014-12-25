@@ -36,7 +36,7 @@ Window {
                 TextField {
                     id: decimal
                     width: 280
-                    font.pointSize: 30
+                    font.pointSize: 25
                     focus: true
                     maximumLength: 4
                     text: "1"
@@ -67,7 +67,7 @@ Window {
             TextField {
                 width: 280
                 id: binary
-                font.pointSize: 30
+                font.pointSize: 25
                 focus: true
                 text: "1"
                 validator: RegExpValidator {regExp: /[01]{1,10}/}
@@ -99,7 +99,7 @@ Window {
                 TextField {
                     id: hexadecimal
                     width: 280
-                    font.pointSize: 30
+                    font.pointSize: 25
                     focus: true
                     text: "1"
                     validator: RegExpValidator {regExp: /[0-9a-fA-F]{1,3}/}
