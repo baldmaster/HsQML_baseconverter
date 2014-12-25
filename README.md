@@ -7,6 +7,6 @@ Compile: `ghc -o yourFileName main.hs`
 
 
 
- Here is screenshot. don't warry about window decoration :) I use tiling WM.
+ Here is screenshot. Don't warry about window decoration :) I use tiling WM.
 
 ![alt tag](https://raw.github.com/Baldmaster/HsQML_baseconverter/master/screenshot.jpg)
